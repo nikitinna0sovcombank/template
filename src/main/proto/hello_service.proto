@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package grpcdemo;
+
+option java_package = "com.example.grpcdemo";
+option java_multiple_files = true;
+
+message HelloRequest {
+  int32 fetch = 1;
+}
+
+message HelloResponse {
+  repeated DataResponse lists = 1;
+}
+
+message DataResponse {
+  int32 id = 1;
+  string data = 2;
+}
+
+service ScoreService {
+  rpc List (HelloRequest) returns (stream HelloResponse) {
+  };
+
+}
