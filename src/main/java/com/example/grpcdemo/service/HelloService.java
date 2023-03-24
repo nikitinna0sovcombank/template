@@ -1,17 +1,15 @@
 package com.example.grpcdemo.service;
 
-import com.example.grpcdemo.*;
+import com.example.grpcdemo.DataResponse;
+import com.example.grpcdemo.HelloRequest;
+import com.example.grpcdemo.HelloResponse;
+import com.example.grpcdemo.ScoreServiceGrpc;
 import com.example.grpcdemo.jpa.DataEntityRepository;
-import com.google.protobuf.ByteString;
 import io.grpc.stub.StreamObserver;
-
 import lombok.RequiredArgsConstructor;
 import org.lognet.springboot.grpc.GRpcService;
 import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.io.IOException;
-import java.io.InputStream;
 
 @GRpcService
 @RequiredArgsConstructor
